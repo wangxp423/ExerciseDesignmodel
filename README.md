@@ -3,3 +3,4 @@
 下面列一下各种设计模式对应代码的包名：<br>
 [简单工厂模式](https://blog.csdn.net/wangxp423/article/details/80336828) --> simplefactory<br>
 [策略模式](https://blog.csdn.net/wangxp423/article/details/80347079) --> strategy<br>
+[单一职责原则](https://blog.csdn.net/wangxp423/article/details/80349273) -->null
