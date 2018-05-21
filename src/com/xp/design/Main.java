@@ -1,5 +1,9 @@
 package com.xp.design;
 
+import com.xp.design.decorate.ConcreteComponent;
+import com.xp.design.decorate.ConcreteDecoratorA;
+import com.xp.design.decorate.ConcreteDecoratorB;
+import com.xp.design.decorate.person.*;
 import com.xp.design.simplefactory.Operation;
 import com.xp.design.simplefactory.OperationFactory;
 import com.xp.design.strategy.CashContext;
@@ -27,5 +31,29 @@ public class Main {
         context.excute(100);
         context = new CashContext(new CashReturn(300, 100));
         context.excute(500);
+        //装饰模式
+        ConcreteComponent c = new ConcreteComponent();
+        ConcreteDecoratorA d1 = new ConcreteDecoratorA();
+        ConcreteDecoratorB d2 = new ConcreteDecoratorB();
+        d1.setComponent(c);
+        d2.setComponent(d1);
+        d2.Operation();
+
+        ConcretePersonA a = new ConcretePersonA();
+        Sneakers sneakers = new Sneakers();
+        BigTrouser bigTrouser = new BigTrouser();
+        TShirts tShirts = new TShirts();
+        sneakers.decorate(a);
+        bigTrouser.decorate(sneakers);
+        tShirts.decorate(bigTrouser);//装饰过程
+        tShirts.show();
+        ConcretePersonB b = new ConcretePersonB();
+        LeatherShoes leatherShoes = new LeatherShoes();
+        Tie tie = new Tie();
+        Suit suit = new Suit();
+        leatherShoes.decorate(b);
+        tie.decorate(leatherShoes);
+        suit.decorate(tie); //装饰过程
+        suit.show();
     }
 }
