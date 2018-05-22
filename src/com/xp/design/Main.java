@@ -4,6 +4,8 @@ import com.xp.design.decorate.ConcreteComponent;
 import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
 import com.xp.design.decorate.person.*;
+import com.xp.design.proxy.Girl;
+import com.xp.design.proxy.Proxy;
 import com.xp.design.simplefactory.Operation;
 import com.xp.design.simplefactory.OperationFactory;
 import com.xp.design.strategy.CashContext;
@@ -55,5 +57,12 @@ public class Main {
         tie.decorate(leatherShoes);
         suit.decorate(tie); //装饰过程
         suit.show();
+        //代理模式
+        Girl girl = new Girl();
+        girl.name = "娇娇";
+        Proxy proxy = new Proxy(girl);
+        proxy.giveDolls();
+        proxy.giveFlowers();
+        proxy.giveChocolate();
     }
 }

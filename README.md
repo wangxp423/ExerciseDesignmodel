@@ -13,4 +13,5 @@
 [简单工厂模式](https://blog.csdn.net/wangxp423/article/details/80336828) --> simplefactory<br>
 [策略模式](https://blog.csdn.net/wangxp423/article/details/80347079) --> strategy<br>
 [装饰模式](https://blog.csdn.net/wangxp423/article/details/80392828) --> decorate<br>
+[代理模式](https://blog.csdn.net/wangxp423/article/details/80402888) --> proxy<br>
 
