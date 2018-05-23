@@ -4,6 +4,8 @@ import com.xp.design.decorate.ConcreteComponent;
 import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
 import com.xp.design.decorate.person.*;
+import com.xp.design.methodfactory.IFactory;
+import com.xp.design.methodfactory.SubOperationFactory;
 import com.xp.design.proxy.Girl;
 import com.xp.design.proxy.Proxy;
 import com.xp.design.simplefactory.Operation;
@@ -27,6 +29,14 @@ public class Main {
         operation.setNumA(1);
         operation.setNumB(2);
         System.out.println("getResult = " + operation.getResult());
+        //工厂方法模式
+//        IFactory factory = new AddOperationFactory();//加法工厂
+        IFactory factory = new SubOperationFactory();//减法工厂
+        //修改运算只需要修改 new 的工厂即可
+        Operation oper = factory.createOperation();
+        oper.setNumA(2);
+        oper.setNumB(3);
+        System.out.println("getResult = " + oper.getResult());
         //策略模式
         CashContext context;
         context = new CashContext(new CashRebate(0.5));
