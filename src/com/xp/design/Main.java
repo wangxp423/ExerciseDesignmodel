@@ -1,5 +1,9 @@
 package com.xp.design;
 
+import com.xp.design.abstractfactory.IDbFactory;
+import com.xp.design.abstractfactory.IDbUser;
+import com.xp.design.abstractfactory.SqlDbFactory;
+import com.xp.design.abstractfactory.User;
 import com.xp.design.decorate.ConcreteComponent;
 import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
@@ -37,6 +41,13 @@ public class Main {
         oper.setNumA(2);
         oper.setNumB(3);
         System.out.println("getResult = " + oper.getResult());
+        //抽象工厂模式
+        User user = new User();
+        IDbFactory dbFactory = new SqlDbFactory();
+//        IDbFactory dbFactory = new AccessDbFactory();
+        IDbUser dbUser = dbFactory.createDbUser();
+        dbUser.inster(user);
+        dbUser.getUser(user.id);
         //策略模式
         CashContext context;
         context = new CashContext(new CashRebate(0.5));
