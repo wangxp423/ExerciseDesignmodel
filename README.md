@@ -1,5 +1,5 @@
 # ExerciseDesignmodel
-最近在看《大话设计模式》顺便敲一下上面的例子，加深理解吧。<br>
+最近在看《大话设计模式》顺便敲一下上面的例子，加深理解吧。
 # 设计模式六大原则：<br>
 [单一职责原则](https://blog.csdn.net/wangxp423/article/details/80349273)<br>
 [开放-封闭原则](https://blog.csdn.net/wangxp423/article/details/80361384)<br>
