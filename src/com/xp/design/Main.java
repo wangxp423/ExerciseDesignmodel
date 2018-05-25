@@ -18,6 +18,9 @@ import com.xp.design.simplefactory.OperationFactory;
 import com.xp.design.strategy.CashContext;
 import com.xp.design.strategy.CashRebate;
 import com.xp.design.strategy.CashReturn;
+import com.xp.design.templatemethod.StudentA;
+import com.xp.design.templatemethod.StudentB;
+import com.xp.design.templatemethod.TestPaper;
 
 /**
  * @类描述：应用常量类
@@ -99,17 +102,17 @@ public class Main {
 
     public static void prototypeModel() {
         //基础原型模式
-//        Resume resume = new Resume("小菜");
-//        resume.setPersonInfo("男","27");
-//        resume.setWorkExperience("1998 - 2000","XX公司");
-//        Resume resumeB = resume.clone();
-//        resumeB.setWorkExperience("1998 - 2000","XX企业");
-//        Resume resumeC = resume.clone();
-//        resumeC.setPersonInfo("男","24");
-//        resume.display();
-//        resumeB.display();
-//        resumeC.display();
-        //原型模式浅复制
+        Resume resume = new Resume("小菜");
+        resume.setPersonInfo("男", "27");
+        resume.setWorkExperience("1998 - 2000", "XX公司");
+        Resume resumeB = resume.clone();
+        resumeB.setWorkExperience("1998 - 2000", "XX企业");
+        Resume resumeC = resume.clone();
+        resumeC.setPersonInfo("男", "24");
+        resume.display();
+        resumeB.display();
+        resumeC.display();
+        //原型模式浅复制和深复制
         Resume qresume = new Resume("小菜");
         qresume.setPersonInfo("男", "27");
         qresume.setWorkExperience("1998 - 2000", "XX公司");
@@ -120,6 +123,15 @@ public class Main {
         qresume.display();
         qresumeB.display();
         qresumeC.display();
+    }
+
+    public static void templateMethod() {
+        TestPaper studentA = new StudentA();
+        studentA.TestQuestionA();
+        studentA.TestQuestionB();
+        TestPaper studentB = new StudentB();
+        studentB.TestQuestionA();
+        studentB.TestQuestionB();
     }
     public static void main(String[] args) {
         //简单工厂模式
@@ -135,6 +147,8 @@ public class Main {
         //代理模式
 //        proxyModel();
         //原型模式
-        prototypeModel();
+//        prototypeModel();
+        //模板方法模式
+        templateMethod();
     }
 }

@@ -20,4 +20,5 @@
 [装饰模式](https://blog.csdn.net/wangxp423/article/details/80392828) --> decorate<br>
 [代理模式](https://blog.csdn.net/wangxp423/article/details/80402888) --> proxy<br>
 [原型模式](https://blog.csdn.net/wangxp423/article/details/80432130) --> prototype<br>
+[模板方法模式](https://blog.csdn.net/wangxp423/article/details/80451494) --> templatemethod<br>
 
