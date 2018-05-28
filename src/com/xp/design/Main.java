@@ -8,6 +8,7 @@ import com.xp.design.decorate.ConcreteComponent;
 import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
 import com.xp.design.decorate.person.*;
+import com.xp.design.facade.Facade;
 import com.xp.design.methodfactory.IFactory;
 import com.xp.design.methodfactory.SubOperationFactory;
 import com.xp.design.prototype.Resume;
@@ -133,6 +134,13 @@ public class Main {
         studentB.TestQuestionA();
         studentB.TestQuestionB();
     }
+
+    public static void facadeModel() {
+        Facade facade = new Facade();
+        facade.methodA();
+        facade.methodB();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -149,6 +157,8 @@ public class Main {
         //原型模式
 //        prototypeModel();
         //模板方法模式
-        templateMethod();
+//        templateMethod();
+        //外观模式
+        facadeModel();
     }
 }
