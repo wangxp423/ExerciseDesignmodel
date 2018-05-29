@@ -4,6 +4,8 @@ import com.xp.design.abstractfactory.IDbFactory;
 import com.xp.design.abstractfactory.IDbUser;
 import com.xp.design.abstractfactory.SqlDbFactory;
 import com.xp.design.abstractfactory.User;
+import com.xp.design.builder.FatPerson;
+import com.xp.design.builder.PersonDirector;
 import com.xp.design.decorate.ConcreteComponent;
 import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
@@ -32,6 +34,7 @@ import com.xp.design.templatemethod.TestPaper;
  * @修改备注：
  */
 public class Main {
+    //简单工厂模式
     public static void simpleFactory() {
         Operation operation = OperationFactory.creatOperation("/");
         operation.setNumA(1);
@@ -39,6 +42,7 @@ public class Main {
         System.out.println("getResult = " + operation.getResult());
     }
 
+    //工厂方法模式
     public static void methodFactory() {
 //        IFactory factory = new AddOperationFactory();//加法工厂
         IFactory factory = new SubOperationFactory();//减法工厂
@@ -49,6 +53,7 @@ public class Main {
         System.out.println("getResult = " + oper.getResult());
     }
 
+    //抽象工厂模式
     public static void abstractFactory() {
         User user = new User();
         IDbFactory dbFactory = new SqlDbFactory();
@@ -58,6 +63,7 @@ public class Main {
         dbUser.getUser(user.id);
     }
 
+    //策略模式
     public static void strategyModel() {
         CashContext context;
         context = new CashContext(new CashRebate(0.5));
@@ -66,6 +72,7 @@ public class Main {
         context.excute(500);
     }
 
+    //装饰模式
     public static void decorateModel() {
         ConcreteComponent c = new ConcreteComponent();
         ConcreteDecoratorA d1 = new ConcreteDecoratorA();
@@ -92,6 +99,7 @@ public class Main {
         suit.show();
     }
 
+    //代理模式
     public static void proxyModel() {
         Girl girl = new Girl();
         girl.name = "娇娇";
@@ -101,6 +109,7 @@ public class Main {
         proxy.giveChocolate();
     }
 
+    //原型模式
     public static void prototypeModel() {
         //基础原型模式
         Resume resume = new Resume("小菜");
@@ -126,6 +135,7 @@ public class Main {
         qresumeC.display();
     }
 
+    //模板方法模式
     public static void templateMethod() {
         TestPaper studentA = new StudentA();
         studentA.TestQuestionA();
@@ -135,10 +145,21 @@ public class Main {
         studentB.TestQuestionB();
     }
 
+    //外观模式
     public static void facadeModel() {
         Facade facade = new Facade();
         facade.methodA();
         facade.methodB();
+    }
+
+    //建造者模式
+    public static void builderModel() {
+        //构建一个瘦子
+//        ThinPerson person = new ThinPerson();
+        //构建一个胖子
+        FatPerson person = new FatPerson();
+        PersonDirector director = new PersonDirector(person);
+        director.creatPerson();
     }
 
     public static void main(String[] args) {
@@ -159,6 +180,8 @@ public class Main {
         //模板方法模式
 //        templateMethod();
         //外观模式
-        facadeModel();
+//        facadeModel();
+        //建造者模式
+        builderModel();
     }
 }
