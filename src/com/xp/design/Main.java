@@ -13,6 +13,12 @@ import com.xp.design.decorate.person.*;
 import com.xp.design.facade.Facade;
 import com.xp.design.methodfactory.IFactory;
 import com.xp.design.methodfactory.SubOperationFactory;
+import com.xp.design.observer.boss.NbaObserver;
+import com.xp.design.observer.boss.Secretary;
+import com.xp.design.observer.boss.StockObserver;
+import com.xp.design.observer.system.DataManager;
+import com.xp.design.observer.system.ObserverA;
+import com.xp.design.observer.system.ObserverB;
 import com.xp.design.prototype.Resume;
 import com.xp.design.proxy.Girl;
 import com.xp.design.proxy.Proxy;
@@ -162,6 +168,23 @@ public class Main {
         director.creatPerson();
     }
 
+    //观察者模式
+    public static void observerModel() {
+        Secretary secretary = new Secretary();
+        NbaObserver nbaObserver = new NbaObserver("老魏", secretary);
+        StockObserver stockObserver = new StockObserver("小菜", secretary);
+        secretary.attach(nbaObserver);
+        secretary.attach(stockObserver);
+        secretary.setAction("老板回来了!!");
+        secretary.notifyObserver();
+
+        //java自带观察者
+        DataManager manager = new DataManager();
+        ObserverA a = new ObserverA(manager);
+        ObserverB b = new ObserverB(manager);
+        manager.setDataChange();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -182,6 +205,8 @@ public class Main {
         //外观模式
 //        facadeModel();
         //建造者模式
-        builderModel();
+//        builderModel();
+        //观察者模式
+        observerModel();
     }
 }
