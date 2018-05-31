@@ -24,4 +24,5 @@
 [外观模式](https://blog.csdn.net/wangxp423/article/details/80480771) --> facade<br>
 [建造者模式](https://blog.csdn.net/wangxp423/article/details/80493866) --> builder<br>
 [观察者模式](https://blog.csdn.net/wangxp423/article/details/80510663) --> observer<br>
+[状态模式](https://blog.csdn.net/wangxp423/article/details/80521971) --> state<br>
 

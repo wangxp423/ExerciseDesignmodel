@@ -24,6 +24,7 @@ import com.xp.design.proxy.Girl;
 import com.xp.design.proxy.Proxy;
 import com.xp.design.simplefactory.Operation;
 import com.xp.design.simplefactory.OperationFactory;
+import com.xp.design.state.Work;
 import com.xp.design.strategy.CashContext;
 import com.xp.design.strategy.CashRebate;
 import com.xp.design.strategy.CashReturn;
@@ -185,6 +186,29 @@ public class Main {
         manager.setDataChange();
     }
 
+    //状态模式
+    public static void stateModel() {
+        Work work = new Work();
+        work.setHour(9);
+        work.working();
+        work.setHour(10);
+        work.working();
+        work.setHour(12);
+        work.working();
+        work.setHour(13);
+        work.working();
+        work.setHour(14);
+        work.working();
+        work.setHour(17);
+        work.setFinish(false);
+        work.working();
+        work.setHour(19);
+//        work.setFinish(true);
+        work.working();
+        work.setHour(22);
+        work.working();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -207,6 +231,8 @@ public class Main {
         //建造者模式
 //        builderModel();
         //观察者模式
-        observerModel();
+//        observerModel();
+        //状态模式
+        stateModel();
     }
 }
