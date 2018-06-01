@@ -15,6 +15,8 @@ import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
 import com.xp.design.decorate.person.*;
 import com.xp.design.facade.Facade;
+import com.xp.design.memento.RoleGame;
+import com.xp.design.memento.RoleStateCaretaker;
 import com.xp.design.methodfactory.IFactory;
 import com.xp.design.methodfactory.SubOperationFactory;
 import com.xp.design.observer.boss.NbaObserver;
@@ -223,6 +225,26 @@ public class Main {
         y.defense();
     }
 
+    //备忘录模式
+    public static void mementoModel() {
+        //大战boss前
+        RoleGame role = new RoleGame();
+        System.out.println("战斗前：");
+        role.initState();
+        role.displayState();
+        //保存进度
+        RoleStateCaretaker caretaker = new RoleStateCaretaker();
+        caretaker.setMemento(role.saveState());
+        //大战boss
+        System.out.println("战斗后：");
+        role.fight();
+        role.displayState();
+        //恢复状态
+        System.out.println("恢复后：");
+        role.recoverState(caretaker.getMemento());
+        role.displayState();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -249,6 +271,8 @@ public class Main {
         //状态模式
 //        stateModel();
         //适配器模式
-        adapterModel();
+//        adapterModel();
+        //备忘录模式
+        mementoModel();
     }
 }
