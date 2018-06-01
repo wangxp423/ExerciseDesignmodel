@@ -4,6 +4,10 @@ import com.xp.design.abstractfactory.IDbFactory;
 import com.xp.design.abstractfactory.IDbUser;
 import com.xp.design.abstractfactory.SqlDbFactory;
 import com.xp.design.abstractfactory.User;
+import com.xp.design.adapter.Center;
+import com.xp.design.adapter.Forwards;
+import com.xp.design.adapter.Player;
+import com.xp.design.adapter.TranslatorAdapter;
 import com.xp.design.builder.FatPerson;
 import com.xp.design.builder.PersonDirector;
 import com.xp.design.decorate.ConcreteComponent;
@@ -209,6 +213,16 @@ public class Main {
         work.working();
     }
 
+    //适配器模式
+    public static void adapterModel() {
+        Player b = new Forwards("巴蒂尔");
+        b.attack();
+        Player m = new Center("卡佩拉");
+        m.defense();
+        Player y = new TranslatorAdapter("姚明");
+        y.defense();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -233,6 +247,8 @@ public class Main {
         //观察者模式
 //        observerModel();
         //状态模式
-        stateModel();
+//        stateModel();
+        //适配器模式
+        adapterModel();
     }
 }
