@@ -35,6 +35,7 @@ import com.xp.design.proxy.Girl;
 import com.xp.design.proxy.Proxy;
 import com.xp.design.simplefactory.Operation;
 import com.xp.design.simplefactory.OperationFactory;
+import com.xp.design.singleton.Singleton;
 import com.xp.design.state.Work;
 import com.xp.design.strategy.CashContext;
 import com.xp.design.strategy.CashRebate;
@@ -294,6 +295,15 @@ public class Main {
         }
     }
 
+    //单例模式
+    public static void singletonModel() {
+        Singleton s1 = Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
+        if (s1 == s2) {
+            System.out.println("两个对象是相同的实例！");
+        }
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -326,6 +336,8 @@ public class Main {
         //组合模式
 //        compositeModel();
         //迭代器模式
-        iteratorModel();
+//        iteratorModel();
+        //单例模式
+        singletonModel();
     }
 }

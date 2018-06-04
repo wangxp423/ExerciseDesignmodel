@@ -29,4 +29,5 @@
 [备忘录模式](https://blog.csdn.net/wangxp423/article/details/80537842) --> memento<br>
 [组合模式](https://blog.csdn.net/wangxp423/article/details/80565482) --> composite<br>
 [迭代器模式](https://blog.csdn.net/wangxp423/article/details/80568404) --> iterator<br>
+[单例模式](https://blog.csdn.net/wangxp423/article/details/80569297) --> singleton<br>
 
