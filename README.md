@@ -27,4 +27,5 @@
 [状态模式](https://blog.csdn.net/wangxp423/article/details/80521971) --> state<br>
 [适配器模式](https://blog.csdn.net/wangxp423/article/details/80534972) --> adapter<br>
 [备忘录模式](https://blog.csdn.net/wangxp423/article/details/80537842) --> memento<br>
+[组合模式](https://blog.csdn.net/wangxp423/article/details/80565482) --> composite<br>
 

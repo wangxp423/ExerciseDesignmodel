@@ -10,6 +10,9 @@ import com.xp.design.adapter.Player;
 import com.xp.design.adapter.TranslatorAdapter;
 import com.xp.design.builder.FatPerson;
 import com.xp.design.builder.PersonDirector;
+import com.xp.design.composite.ConcreteCompany;
+import com.xp.design.composite.FinanceDepartment;
+import com.xp.design.composite.HrDepartment;
 import com.xp.design.decorate.ConcreteComponent;
 import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
@@ -245,6 +248,34 @@ public class Main {
         role.displayState();
     }
 
+    //组合模式
+    public static void compositeModel() {
+        ConcreteCompany root = new ConcreteCompany("北京总公司");
+        root.add(new HrDepartment("总公司人力资源部"));
+        root.add(new FinanceDepartment("总公司财务部"));
+
+        ConcreteCompany company1 = new ConcreteCompany("上海华东分公司");
+        company1.add(new HrDepartment("华东分公司人力资源部"));
+        company1.add(new FinanceDepartment("华东分公司财务部"));
+        root.add(company1);
+
+        ConcreteCompany company2 = new ConcreteCompany("南京办事处");
+        company2.add(new HrDepartment("南京办事处人力资源部"));
+        company2.add(new FinanceDepartment("南京办事处财务部"));
+        company1.add(company2);
+
+        ConcreteCompany company3 = new ConcreteCompany("杭州办事处");
+        company3.add(new HrDepartment("杭州办事处人力资源部"));
+        company3.add(new FinanceDepartment("杭州办事处财务部"));
+        company1.add(company3);
+
+        System.out.println("结构图:");
+        root.display(1);
+
+        System.out.println("\n职责：");
+        root.lineDuty();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -273,6 +304,8 @@ public class Main {
         //适配器模式
 //        adapterModel();
         //备忘录模式
-        mementoModel();
+//        mementoModel();
+        //组合模式
+        compositeModel();
     }
 }
