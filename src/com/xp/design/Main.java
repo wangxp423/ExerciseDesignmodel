@@ -18,6 +18,8 @@ import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
 import com.xp.design.decorate.person.*;
 import com.xp.design.facade.Facade;
+import com.xp.design.iterator.ConcreteAggregate;
+import com.xp.design.iterator.Iterator;
 import com.xp.design.memento.RoleGame;
 import com.xp.design.memento.RoleStateCaretaker;
 import com.xp.design.methodfactory.IFactory;
@@ -276,6 +278,22 @@ public class Main {
         root.lineDuty();
     }
 
+    //迭代器模式
+    public static void iteratorModel() {
+        ConcreteAggregate aggregate = new ConcreteAggregate();
+        aggregate.add("大鸟");
+        aggregate.add("小菜");
+        aggregate.add("行李");
+        aggregate.add("老外");
+        aggregate.add("公交内部员工");
+        aggregate.add("小偷");
+        Iterator iterator = aggregate.createIterator();
+        while (!iterator.isDone()) {
+            System.out.println(iterator.currentItem() + "请买票！");
+            iterator.next();
+        }
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -306,6 +324,8 @@ public class Main {
         //备忘录模式
 //        mementoModel();
         //组合模式
-        compositeModel();
+//        compositeModel();
+        //迭代器模式
+        iteratorModel();
     }
 }

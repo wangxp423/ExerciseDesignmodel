@@ -28,4 +28,5 @@
 [适配器模式](https://blog.csdn.net/wangxp423/article/details/80534972) --> adapter<br>
 [备忘录模式](https://blog.csdn.net/wangxp423/article/details/80537842) --> memento<br>
 [组合模式](https://blog.csdn.net/wangxp423/article/details/80565482) --> composite<br>
+[迭代器模式](https://blog.csdn.net/wangxp423/article/details/80568404) --> iterator<br>
 
