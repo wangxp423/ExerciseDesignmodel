@@ -30,4 +30,5 @@
 [组合模式](https://blog.csdn.net/wangxp423/article/details/80565482) --> composite<br>
 [迭代器模式](https://blog.csdn.net/wangxp423/article/details/80568404) --> iterator<br>
 [单例模式](https://blog.csdn.net/wangxp423/article/details/80569297) --> singleton<br>
+[桥接模式](https://blog.csdn.net/wangxp423/article/details/80571243) --> bridge<br>
 

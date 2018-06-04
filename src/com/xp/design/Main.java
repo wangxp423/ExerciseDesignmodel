@@ -8,6 +8,7 @@ import com.xp.design.adapter.Center;
 import com.xp.design.adapter.Forwards;
 import com.xp.design.adapter.Player;
 import com.xp.design.adapter.TranslatorAdapter;
+import com.xp.design.bridge.*;
 import com.xp.design.builder.FatPerson;
 import com.xp.design.builder.PersonDirector;
 import com.xp.design.composite.ConcreteCompany;
@@ -304,6 +305,24 @@ public class Main {
         }
     }
 
+    //桥接模式
+    public static void bridgeModel() {
+        HandsetBrand ab;
+        ab = new HandsetBrandN();
+        ab.setHandsetSoft(new HandsetGame());
+        ab.run();
+
+        ab.setHandsetSoft(new HandsetAddressList());
+        ab.run();
+
+        ab = new HandsetBrandM();
+        ab.setHandsetSoft(new HandsetGame());
+        ab.run();
+
+        ab.setHandsetSoft(new HandsetAddressList());
+        ab.run();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -338,6 +357,8 @@ public class Main {
         //迭代器模式
 //        iteratorModel();
         //单例模式
-        singletonModel();
+//        singletonModel();
+        //桥接模式
+        bridgeModel();
     }
 }
