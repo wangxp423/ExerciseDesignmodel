@@ -35,6 +35,10 @@ import com.xp.design.observer.system.ObserverB;
 import com.xp.design.prototype.Resume;
 import com.xp.design.proxy.Girl;
 import com.xp.design.proxy.Proxy;
+import com.xp.design.responsibility.CommonManager;
+import com.xp.design.responsibility.GeneralManager;
+import com.xp.design.responsibility.MajordomoManager;
+import com.xp.design.responsibility.Request;
 import com.xp.design.simplefactory.Operation;
 import com.xp.design.simplefactory.OperationFactory;
 import com.xp.design.singleton.Singleton;
@@ -338,6 +342,39 @@ public class Main {
         waiter.notifyOrders();
     }
 
+    //职责链模式
+    public static void responsibilityModel() {
+        CommonManager jingli = new CommonManager("经理");
+        MajordomoManager zongjian = new MajordomoManager("总监");
+        GeneralManager zongjingli = new GeneralManager("总经理");
+        jingli.setSuperior(zongjian);
+        zongjian.setSuperior(zongjingli);
+
+        Request request = new Request();
+        request.setRequestType("请假");
+        request.setRequestContent("小菜请假");
+        request.setNumber(1);
+        jingli.requestApplication(request);
+
+        Request request1 = new Request();
+        request1.setRequestType("请假");
+        request1.setRequestContent("小菜请假");
+        request1.setNumber(4);
+        jingli.requestApplication(request1);
+
+        Request request2 = new Request();
+        request2.setRequestType("加薪");
+        request2.setRequestContent("小菜加薪");
+        request2.setNumber(500);
+        jingli.requestApplication(request2);
+
+        Request request3 = new Request();
+        request3.setRequestType("加薪");
+        request3.setRequestContent("小菜加薪");
+        request3.setNumber(1000);
+        jingli.requestApplication(request3);
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -376,6 +413,8 @@ public class Main {
         //桥接模式
 //        bridgeModel();
         //命令模式
-        commandModel();
+//        commandModel();
+        //职责链模式
+        responsibilityModel();
     }
 }
