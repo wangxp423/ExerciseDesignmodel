@@ -22,6 +22,9 @@ import com.xp.design.decorate.person.*;
 import com.xp.design.facade.Facade;
 import com.xp.design.iterator.ConcreteAggregate;
 import com.xp.design.iterator.Iterator;
+import com.xp.design.mediator.Iraq;
+import com.xp.design.mediator.UniteNationsSecurityCouncil;
+import com.xp.design.mediator.Usa;
 import com.xp.design.memento.RoleGame;
 import com.xp.design.memento.RoleStateCaretaker;
 import com.xp.design.methodfactory.IFactory;
@@ -375,6 +378,19 @@ public class Main {
         jingli.requestApplication(request3);
     }
 
+    //中介者模式
+    public static void mediatorModel() {
+        UniteNationsSecurityCouncil unsc = new UniteNationsSecurityCouncil();
+        Usa usa = new Usa(unsc);
+        Iraq iraq = new Iraq(unsc);
+
+        unsc.setUsa(usa);
+        unsc.setIraq(iraq);
+
+        usa.declare("不准研制核武器，否则要发动战争！");
+        iraq.declare("我们没有核武器，也不怕侵略！");
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -415,6 +431,8 @@ public class Main {
         //命令模式
 //        commandModel();
         //职责链模式
-        responsibilityModel();
+//        responsibilityModel();
+        //中介者模式
+        mediatorModel();
     }
 }

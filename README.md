@@ -33,4 +33,5 @@
 [桥接模式](https://blog.csdn.net/wangxp423/article/details/80571243) --> bridge<br>
 [命令模式](https://blog.csdn.net/wangxp423/article/details/80581213) --> command<br>
 [职责链模式](https://blog.csdn.net/wangxp423/article/details/80583285) --> responsibility<br>
+[中介者模式](https://blog.csdn.net/wangxp423/article/details/80585059) --> mediator<br>
 
