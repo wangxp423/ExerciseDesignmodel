@@ -11,6 +11,7 @@ import com.xp.design.adapter.TranslatorAdapter;
 import com.xp.design.bridge.*;
 import com.xp.design.builder.FatPerson;
 import com.xp.design.builder.PersonDirector;
+import com.xp.design.command.*;
 import com.xp.design.composite.ConcreteCompany;
 import com.xp.design.composite.FinanceDepartment;
 import com.xp.design.composite.HrDepartment;
@@ -323,6 +324,20 @@ public class Main {
         ab.run();
     }
 
+    //命令模式
+    public static void commandModel() {
+        Barbecuer barbecuer = new Barbecuer();
+        Command muttonCommand1 = new BakeMuttonCommand(barbecuer);
+        Command muttonCommand2 = new BakeMuttonCommand(barbecuer);
+        Command chickenCommand = new BakeChickenWingCommand(barbecuer);
+        Waiter waiter = new Waiter();
+        //顾客点餐
+        waiter.setOrder(muttonCommand1);
+        waiter.setOrder(muttonCommand2);
+        waiter.setOrder(chickenCommand);
+        waiter.notifyOrders();
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -359,6 +374,8 @@ public class Main {
         //单例模式
 //        singletonModel();
         //桥接模式
-        bridgeModel();
+//        bridgeModel();
+        //命令模式
+        commandModel();
     }
 }
