@@ -35,4 +35,5 @@
 [职责链模式](https://blog.csdn.net/wangxp423/article/details/80583285) --> responsibility<br>
 [中介者模式](https://blog.csdn.net/wangxp423/article/details/80585059) --> mediator<br>
 [享元模式](https://blog.csdn.net/wangxp423/article/details/80592831) --> flyweight<br>
+[解释器模式](https://blog.csdn.net/wangxp423/article/details/80596511) --> interpreter<br>
 
