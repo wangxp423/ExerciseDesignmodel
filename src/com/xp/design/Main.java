@@ -20,6 +20,8 @@ import com.xp.design.decorate.ConcreteDecoratorA;
 import com.xp.design.decorate.ConcreteDecoratorB;
 import com.xp.design.decorate.person.*;
 import com.xp.design.facade.Facade;
+import com.xp.design.flyweight.Website;
+import com.xp.design.flyweight.WebsiteFactory;
 import com.xp.design.iterator.ConcreteAggregate;
 import com.xp.design.iterator.Iterator;
 import com.xp.design.mediator.Iraq;
@@ -391,6 +393,31 @@ public class Main {
         iraq.declare("我们没有核武器，也不怕侵略！");
     }
 
+    //享元模式
+    public static void flyweightModel() {
+        WebsiteFactory factory = new WebsiteFactory();
+
+        Website website1 = factory.getWebsiteCategory("产品展示");
+        website1.Use(new com.xp.design.flyweight.User("小菜"));
+
+        Website website2 = factory.getWebsiteCategory("产品展示");
+        website2.Use(new com.xp.design.flyweight.User("大鸟"));
+
+        Website website3 = factory.getWebsiteCategory("产品展示");
+        website3.Use(new com.xp.design.flyweight.User("娇娇"));
+
+        Website website4 = factory.getWebsiteCategory("博客");
+        website4.Use(new com.xp.design.flyweight.User("老顽童"));
+
+        Website website5 = factory.getWebsiteCategory("博客");
+        website5.Use(new com.xp.design.flyweight.User("桃谷六仙"));
+
+        Website website6 = factory.getWebsiteCategory("博客");
+        website6.Use(new com.xp.design.flyweight.User("南海鳄神"));
+
+        System.out.println("得到网站分类总数：" + factory.getWebsitCount());
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -433,6 +460,8 @@ public class Main {
         //职责链模式
 //        responsibilityModel();
         //中介者模式
-        mediatorModel();
+//        mediatorModel();
+        //享元模式
+        flyweightModel();
     }
 }
