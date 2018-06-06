@@ -11,7 +11,7 @@
 [迪米特法则](https://blog.csdn.net/wangxp423/article/details/80365515)<br>
 
 
-# 设计模式<br>
+# 设计模式(23种)<br>
 下面列一下各种设计模式对应代码的包名：<br>
 [简单工厂模式](https://blog.csdn.net/wangxp423/article/details/80336828) --> simplefactory<br>
 [工厂方法模式](https://blog.csdn.net/wangxp423/article/details/80417377) --> methodfactory<br>
@@ -36,4 +36,5 @@
 [中介者模式](https://blog.csdn.net/wangxp423/article/details/80585059) --> mediator<br>
 [享元模式](https://blog.csdn.net/wangxp423/article/details/80592831) --> flyweight<br>
 [解释器模式](https://blog.csdn.net/wangxp423/article/details/80596511) --> interpreter<br>
+[访问者模式](https://blog.csdn.net/wangxp423/article/details/80598264) --> visitor<br>
 

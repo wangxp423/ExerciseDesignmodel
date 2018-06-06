@@ -55,6 +55,7 @@ import com.xp.design.strategy.CashReturn;
 import com.xp.design.templatemethod.StudentA;
 import com.xp.design.templatemethod.StudentB;
 import com.xp.design.templatemethod.TestPaper;
+import com.xp.design.visitor.*;
 
 /**
  * @类描述：应用常量类
@@ -453,6 +454,22 @@ public class Main {
         }
     }
 
+    //访问者模式
+    public static void visitorModel() {
+        ObjectStructure structure = new ObjectStructure();
+        structure.attach(new Man());
+        structure.attach(new Woman());
+
+        Success success = new Success();
+        structure.display(success);
+
+        Failing failing = new Failing();
+        structure.display(failing);
+
+        Amativeness amativeness = new Amativeness();
+        structure.display(amativeness);
+    }
+
     public static void main(String[] args) {
         //简单工厂模式
 //        simpleFactory();
@@ -499,6 +516,8 @@ public class Main {
         //享元模式
 //        flyweightModel();
         //解释器模式
-        interpreterModel();
+//        interpreterModel();
+        //访问者模式
+        visitorModel();
     }
 }
